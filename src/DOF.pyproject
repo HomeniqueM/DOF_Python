@@ -1,0 +1,14 @@
+{
+    "files": [
+        "mainwindow.py",
+        "form.ui",
+        "configs/configs.py",
+        "controller/controller_image_view.py",
+        "controller_training.py",
+        "model/model_type.py",
+        "model/training_model.py",
+        "training/treine_svm.py",
+        "utils/stopwatch.py",
+        "utils/utils_os.py"
+    ]
+}

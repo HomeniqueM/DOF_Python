@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1148</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(33, 37, 41);
+color: rgb(246, 245, 244);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>2</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scroll_image_view">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>747</width>
+         <height>734</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="ImageView" name="image_view">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>4</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="whatsThis">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Aqui fica a image&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QWidget" name="widget" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_matrix">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="text">
+          <string>Matrix</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignHCenter|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="ImageConfusionMatrix" name="widget_confusion_matrix" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>3</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_info">
+         <property name="text">
+          <string>Informações</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="ImageTrainingInfo" name="widget_2" native="true">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+           <horstretch>3</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1148</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArquivo">
+    <property name="title">
+     <string>Arquivo</string>
+    </property>
+    <addaction name="actionAbrir"/>
+    <addaction name="actionSalvar"/>
+   </widget>
+   <widget class="QMenu" name="menuExercultar">
+    <property name="title">
+     <string>Ferramentas</string>
+    </property>
+    <widget class="QMenu" name="menuTreinamento">
+     <property name="title">
+      <string>Treinamento</string>
+     </property>
+     <addaction name="actionSVM"/>
+     <addaction name="actionGOOGLENET"/>
+     <addaction name="actionXGBoost1"/>
+    </widget>
+    <widget class="QMenu" name="menuPrevisao">
+     <property name="title">
+      <string>Previsao</string>
+     </property>
+     <addaction name="actionPrever_classe_KL"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="actionRecorte"/>
+    <addaction name="actionBusca_de_sub_regiao"/>
+    <addaction name="separator"/>
+    <addaction name="menuTreinamento"/>
+    <addaction name="menuPrevisao"/>
+   </widget>
+   <widget class="QMenu" name="menuSobre">
+    <property name="title">
+     <string>Sobre</string>
+    </property>
+   </widget>
+   <addaction name="menuArquivo"/>
+   <addaction name="menuExercultar"/>
+   <addaction name="menuSobre"/>
+  </widget>
+  <action name="actionAbrir">
+   <property name="text">
+    <string>Abrir</string>
+   </property>
+  </action>
+  <action name="actionSalvar">
+   <property name="text">
+    <string>Salvar</string>
+   </property>
+  </action>
+  <action name="actionRecorte">
+   <property name="text">
+    <string>Recorte</string>
+   </property>
+  </action>
+  <action name="actionBusca_de_sub_regiao">
+   <property name="text">
+    <string>Busca de sub-regiao</string>
+   </property>
+  </action>
+  <action name="actionSVM">
+   <property name="text">
+    <string>SVM</string>
+   </property>
+  </action>
+  <action name="actionGOOGLENET">
+   <property name="text">
+    <string>GOOGLENET</string>
+   </property>
+  </action>
+  <action name="actionXGBoost1">
+   <property name="text">
+    <string>XGBoost1</string>
+   </property>
+  </action>
+  <action name="actionPrever_classe_KL">
+   <property name="text">
+    <string>Prever classe KL</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ImageView</class>
+   <extends>QLabel</extends>
+   <header>widgets/image_view/image_view.h</header>
+   <slots>
+    <slot>open_image()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>ImageConfusionMatrix</class>
+   <extends>QWidget</extends>
+   <header>widgets/image_plot/image_confusion_matrix.h</header>
+   <container>1</container>
+   <slots>
+    <slot>on_training_completed(QVariantList,QVariantHash)</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>ImageTrainingInfo</class>
+   <extends>QWidget</extends>
+   <header>widgets/image_plot/image_training_info.h</header>
+   <container>1</container>
+   <slots>
+    <slot>on_training_completed(QVariantList,QVariantHash)</slot>
+   </slots>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>MainWindow</sender>
+   <signal>training_completed(QVariantList,QVariantHash)</signal>
+   <receiver>widget_confusion_matrix</receiver>
+   <slot>on_training_completed(QVariantList,QVariantHash)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>573</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>764</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>MainWindow</sender>
+   <signal>training_completed(QVariantList,QVariantHash)</signal>
+   <receiver>widget_2</receiver>
+   <slot>on_training_completed(QVariantList,QVariantHash)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>573</x>
+     <y>399</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>951</x>
+     <y>592</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPrever_classe_KL</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>fazer_previsao()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>573</x>
+     <y>399</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>training_completed(QVariantList,QVariantHash)</signal>
+  <slot>open_controller_training()</slot>
+  <slot>fazer_previsao()</slot>
+ </slots>
+</ui>
